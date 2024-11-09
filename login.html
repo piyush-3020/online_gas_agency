@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gasease-agency-login</title>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <!-- Start header -->
+    <header class="header background">
+        <nav class="navbar ">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="logo">
+                <a href="index.html" class="lgname">Gas<span>Ease</span></a>
+            </div>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Logout</a></li>
+            </ul>
+            <div class="bargar">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+        </nav>
+    </header>
+    <!-- Ends header -->
+
+    <!-- Start Mainbox -->
+    <div class="main">
+
+        <!-- loginsection starts  -->
+        <div class="box">
+            
+            <div class="login">
+                <div class="form">
+                    <h2>Login Here</h2>
+                    <input type="text" name="email" placeholder="email" id="email">
+                    <input type="password" name="" placeholder="Password" id="password">
+                    <button class="btn" id="login"><a href="#">Login</a></button>
+    
+                    <p class="link">Dont't have an account <br>
+                    <a href="signup.html">Sign up </a><br> here</p>
+                </div>   
+            </div>
+        </div>
+        
+        <!-- footer -->
+    <footer>
+        <p>
+            Copyright &copy; 2024-2025  www.gasease-agency.com | All rights reserved
+        </p>
+    </footer>
+    <!-- footer -->
+    </div>
+    <!-- End Mainbox -->
+    <!-- js for toggle -->
+    <script src="js/main.js"></script>
+    
+
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAlwl2UdUcNqnxbf88rxlOg7dZUBYyYvuI",
+            authDomain: "gas-system-624d7.firebaseapp.com",
+            projectId: "gas-system-624d7",
+            storageBucket: "gas-system-624d7.appspot.com",
+            messagingSenderId: "37872274327",
+            appId: "1:37872274327:web:57bd41a547b1040f4712d2"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+         // login User
+
+         function loginUser() {
+            const u_email = document.querySelector('#email').value;
+            const u_password = document.querySelector('#password').value;
+
+            if (!u_email || !u_password) {
+                alert("Plz enter email and password")
+                return;
+            }
+
+            signInWithEmailAndPassword(auth, u_email, u_password).then((userCredintial) => {
+                console.log("Login User");
+            })
+
+                .catch((error) => {
+                    console.log(error);
+                })
+
+
+        }
+
+        const login = document.querySelector('#login');
+
+        login.addEventListener('click', loginUser);
+
+        //after login
+
+        onAuthStateChanged(auth,(user)=>{
+            
+            if(user){
+                window.location.assign("user.html")
+            }else{
+                console.log("error");
+            }
+
+        })
+
+    </script>
+
+</body>
+
+</html>

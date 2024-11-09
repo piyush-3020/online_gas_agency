@@ -1,0 +1,72 @@
+/* responsive of index.html */
+@media only screen and (max-width: 1100px) {
+    .navbar {
+        flex-direction: column;
+        height: 286px;
+        transition: all 0.3s ease-out;
+    }
+
+    .logo {
+        width: 100%;
+        height: 42px;
+    }
+
+    .logo img {
+        width: 5%;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .nav-list li {
+        padding: 10px 0;
+    }
+
+    .bargar {
+        display: block;
+    }
+
+    .h-nav-resp {
+        height: 50px;
+    }
+
+    .v-class-resp {
+        opacity: 0;
+    }
+
+    .home {
+        max-width: 80%;
+        flex-direction: column;
+        height: max-content;
+    }
+    .home .content{
+        max-width: 80%;
+    }
+
+    .home .image {
+        max-width: 80%;
+    }
+
+    .about .ab-us{
+        max-width: 100%;
+        flex-direction: column;
+        height: max-content;
+        margin: auto;
+    }
+    .ab-us .image {
+        width: 75%;
+    }
+      
+    .ab-us .content {
+        width: 80%;
+
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .home .content .text-big{
+        font-size: 44px;
+    }
+}

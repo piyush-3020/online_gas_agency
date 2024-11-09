@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment_options</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="payment-options">
+        <h2>Choose a Payment Method:</h2>
+        <div class="option">
+            <input type="radio" id="cash" name="payment" value="cash">
+            <label for="cash">Cash on Delivery</label>
+        </div>
+        <div class="option">
+            <input type="radio" id="paytm" name="payment" value="paytm">
+            <label for="paytm">Paytm QR Code</label>
+        </div>
+        <div class="paytm-qr-code">
+            <img src="images/paytm-scan-code-ghrv.png" alt="Paytm QR Code">
+        </div>
+        <button class="confirm-payment">Confirm Payment</button>
+    </div>
+</body>
+</html>

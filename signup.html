@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gasease-agency-signup</title>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <!-- Start header -->
+    <header class="header background">
+        <nav class="navbar ">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="logo">
+                <a href="index.html" class="lgname">Gas<span>Ease</span></a>
+            </div>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+            <div class="bargar">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+        </nav>
+    </header>
+    <!-- Ends header -->
+
+    <!-- Start Mainbox -->
+    <div class="main">
+
+        <!-- Signup section starts  -->
+        <div class="box">
+
+            <div class="signup">
+                <div class="form-sg">
+                    <h2>Sign Up Here</h2>
+                    <input type="text" name="name" placeholder="Full Name" id="name">
+                    <input type="text" name="phone_no" placeholder="Phone no." id="phone_no">
+                    <input type="email" name="email" placeholder="email" id="uemail">
+                    <input type="text" name="pincode" placeholder="Pincode" id="Pincode">
+                    <input type="text" name="Address" placeholder="Address" id="Address">
+                    <input type="password" name="password" placeholder="Password" id="upassword">
+
+                    <button type="submit" class="btn-sg" id="signup_btn"><a href="#">SignUp</a></button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Signup section Ends  -->
+
+        <!-- footer -->
+        <footer>
+            <p>
+                Copyright &copy; 2024-2025 www.gasease-agency.com | All rights reserved
+            </p>
+        </footer>
+        <!-- footer -->
+    </div>
+    <!-- End Mainbox -->
+    <!-- js for toggle -->
+    <script src="js/main.js"></script>
+
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAlwl2UdUcNqnxbf88rxlOg7dZUBYyYvuI",
+            authDomain: "gas-system-624d7.firebaseapp.com",
+            projectId: "gas-system-624d7",
+            storageBucket: "gas-system-624d7.appspot.com",
+            messagingSenderId: "37872274327",
+            appId: "1:37872274327:web:57bd41a547b1040f4712d2"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth();
+
+        const signUp = document.querySelector('#signup_btn');
+
+
+        signUp.addEventListener('click', (e) => {
+            
+            var u_email = document.getElementById('uemail').value;
+            var u_password = document.getElementById('upassword').value;
+            var name = document.getElementById('name').value;
+            var Phone_no = document.getElementById('phone_no').value;
+            var Pincode = document.getElementById('Pincode').value;
+            var Address = document.getElementById('Address').value;
+
+
+
+            createUserWithEmailAndPassword(auth, u_email, u_password)
+                .then((userCredential) => {
+                    // Signed up 
+                    const user = userCredential.user;
+
+                    set(ref(database, 'users/' + user.uid),{
+                        Name: name,
+                        Phone_no: Phone_no,
+                        email: u_email,
+                        Pincode: Pincode,
+                        Address: Address
+                    })
+
+                    alert('User created')
+                    // ...
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+
+                    alert(errorMessage);
+                    // ..
+                });
+        })
+
+
+
+    </script>
+
+
+</body>
+
+</html>

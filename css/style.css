@@ -1,0 +1,393 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --orange: rgb(255 100 43);
+    --box-shadow: 7.5px 7.5px 0 rgba(22, 160, 133, .2);
+    --text-shadow: 6px 6px 0 rgba(0, 0, 0, .2);
+}
+
+/* start header */
+.header {
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+}
+
+.logo {
+    width: 30%;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    width: 10%;
+    border: 1px solid rgb(160, 87, 176);
+    border-radius: 50%;
+}
+
+.logo a {
+    text-decoration: none;
+    padding-left: 10px;
+    color: deepskyblue;
+    font-size: 25px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+.logo a:hover span {
+    transition: 0.26s;
+    color: rgb(58, 142, 95);
+    padding-left: 2px;
+}
+
+.nav-list {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav-list li {
+    list-style: none;
+    padding: 0 20px 0 80px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: white;
+    transition: 0.25s;
+}
+
+.nav-list li a:hover {
+    color: rgb(0, 119, 255);
+}
+
+.background {
+    background: var(--orange);
+    background-size: cover;
+    background-blend-mode: soft-light;
+}
+
+.bargar {
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 10px;
+}
+
+.bargar .line {
+    width: 33px;
+    background-color: white;
+    height: 4px;
+    margin: 5px 3px;
+}
+
+/* Ends header */
+/* Start main-box */
+
+.main-box {
+    height: 100vh;
+}
+
+.main-box a {
+    text-decoration: none;
+}
+
+.heading {
+    text-transform: uppercase;
+    color: var(--orange);
+    font-size: 50px;
+    text-align: center;
+    padding: 20px 0;
+    text-shadow: var(--text-shadow);
+}
+
+.heading span {
+    color: darkgreen;
+}
+
+
+/* Home Start */
+
+.home {
+    max-width: 80%;
+    height: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.home .content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home .content .text-big {
+    font-size: 75px;
+    color: blue;
+    text-shadow: var(--text-shadow);
+}
+
+.home .content .text-big img:hover {
+    width: 20%;
+    border-radius: 25%;
+    margin-left: 10px;
+}
+
+.home .content .text-small {
+    font-size: 32px;
+    color: rgb(84, 84, 166);
+    text-transform: capitalize;
+    line-height: 1.5;
+    margin: 10px 0;
+
+}
+
+.home .content .btn {
+    display: inline-block;
+    font-size: 18px;
+    border: 2px solid var(--orange);
+    width: max-content;
+    border-radius: 7px;
+    margin: 11px 0;
+    padding: 7px 13px;
+    color: var(--orange);
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    transition: ease 0.4s;
+}
+
+.content .btn span {
+    color: white;
+    background-color: var(--orange);
+    border-radius: 5px;
+    padding: 4px 8px;
+    margin-left: 6px;
+    transition: ease 0.3s;
+}
+
+.content .btn:hover {
+    background-color: var(--orange);
+    color: white;
+}
+
+
+.content .btn:hover span {
+    color: var(--orange);
+    background-color: white;
+    margin-left: 10px;
+}
+
+.home .image {
+    width: 50%;
+}
+
+.home .image img {
+    width: 80%;
+    border: 3px solid lightskyblue;
+    border-radius: 20px;
+    display: block;
+    margin: auto
+}
+
+/* Home End */
+
+/* Start Services */
+.services {
+    max-width: 80%;
+    margin: auto;
+    height: max-content;
+    justify-content: center;
+    align-items: center;
+}
+
+.services .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(272px, 1fr));
+    gap: 20px;
+}
+
+.services .box-container .box {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    border: 3px solid var(--orange);
+    padding: 32px;
+}
+
+.services .box-container .box h3 {
+    color: blue;
+    font-size: 30px;
+    padding: 16px 0;
+}
+
+.services .box-container .box p {
+    color: rgb(47, 46, 46);
+    font-size: 18px;
+    line-height: 2;
+}
+
+.services .box-container .box img {
+    height: 50%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* End services */
+
+/* Start about */
+.about {
+    max-width: 90%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    height: max-content;
+}
+
+.about .ab-us {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.ab-us .image {
+    width: 50%;
+}
+
+.ab-us .image img {
+    width: 100%;
+}
+
+.ab-us .content {
+    width: 50%;
+    flex-wrap: wrap;
+}
+
+.ab-us .content p {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0 20px;
+    line-height: 1.5;
+}
+
+/* Start about */
+/* contact section start  */
+.contact {
+    background-color: aliceblue;
+    max-width: 90%;
+    height: 580px;
+    margin: auto;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.contact .form {
+    max-width: 500px;
+    margin: 0px auto;
+}
+
+.form .form-input {
+    width: 100%;
+    margin: 16px 0;
+    padding: 4px 2px;
+    font-size: 19px;
+    border: 2px solid grey;
+    border-radius: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form .btn-submit {
+    width: max-content;
+    margin: 10px auto;
+    font-size: 20px;
+    padding: 5px 14px;
+    border: 2px solid var(--orange);
+    border-radius: 7px;
+    background-color: snow;
+    box-shadow: var(--box-shadow);
+}
+
+.form .btn-submit:hover {
+    border: 2px solid snow;
+    color: seashell;
+    background-color: var(--orange);
+    padding-left: 10px;
+}
+
+/* contact section end */
+
+
+.payment-options {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.payment-options h2 {
+    margin-bottom: 20px;
+}
+
+.option {
+    margin-bottom: 10px;
+}
+
+.option input[type="radio"] {
+    margin-right: 10px;
+}
+
+.paytm-qr-code {
+    display: none;
+    margin-top: 20px;
+}
+
+.confirm-payment {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: blue;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.confirm-payment:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+/* footer start */
+footer {
+    margin: 20px 0;
+    width: 100%;
+    background-color: #103f98;
+    text-align: center;
+    padding: 16px 0;
+    font-size: 20px;
+    color: white;
+}
+
+/* footer end */
+
+/* End main-box */
